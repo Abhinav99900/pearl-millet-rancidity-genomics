@@ -1,0 +1,7 @@
+Metric	GHB732_low_rancidity	GHB538_high_rancidity
+Raw_total_variants	18686050	17842802
+Filtered_high_confidence_variants	15112744	13799108
+Retention_from_raw_percent	80.88	77.3
+Final_SNPs	13622513	12355115
+Final_INDELs	1490231	1443993
+Approximate_classified_gene_universe	35746	35772

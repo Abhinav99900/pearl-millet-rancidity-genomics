@@ -1,0 +1,16 @@
+Candidate_set	Gene_ID	Impact_class	Putative_function_or_group	Score
+Common	Pgl_GLEAN_10001022	LoF-associated	GDSL esterase/lipase-associated protein; group: Direct rancidity initiation	19
+Common	Pgl_GLEAN_10003911	LoF-associated	Esterase-like protein; group: Direct rancidity initiation	19
+Common	Pgl_GLEAN_10005615	LoF-associated	Lipoxygenase-associated protein; group: Direct rancidity initiation	19
+Common	Pgl_GLEAN_10005646	LoF-associated	GDSL esterase/lipase-associated protein; group: Direct rancidity initiation	19
+Common	Pgl_GLEAN_10001809	Protein-altering	Phospholipase/carboxylesterase/thioesterase-associated protein; group: Direct rancidity initiation	17
+GHB732_unique	Pgl_GLEAN_10001963	LoF-associated	Direct rancidity-initiation-associated candidate; group: Direct rancidity initiation	18
+GHB732_unique	Pgl_GLEAN_10003681	LoF-associated	Direct rancidity-initiation-associated candidate; group: Direct rancidity initiation	18
+GHB732_unique	Pgl_GLEAN_10004391	LoF-associated	Direct rancidity-initiation-associated candidate; group: Direct rancidity initiation	18
+GHB732_unique	Pgl_GLEAN_10002067	Protein-altering	Direct rancidity-initiation-associated candidate; group: Direct rancidity initiation	16
+GHB732_unique	Pgl_GLEAN_10002530	Protein-altering	Triacylglycerol lipase OBL1-like protein; group: Direct rancidity initiation	16
+GHB538_unique	Pgl_GLEAN_10017691	Protein-altering	Esterase-domain-containing protein; group: Direct rancidity initiation	15
+GHB538_unique	Pgl_GLEAN_10026487	Protein-altering	Oxidative deterioration/detoxification-associated candidate; group: Oxidative deterioration/detoxification	15
+GHB538_unique	Pgl_GLEAN_10031742	Protein-altering	Betaine aldehyde dehydrogenase 2-like protein; group: Oxidative deterioration/detoxification	15
+GHB538_unique	Pgl_GLEAN_10010101	Regulatory/modulatory	Oxidative deterioration/detoxification-associated candidate; group: Oxidative deterioration/detoxification	13
+GHB538_unique	Pgl_GLEAN_10007329	LOW-impact coding	AMADH2-like aminobutyraldehyde dehydrogenase; group: Oxidative deterioration/detoxification	11

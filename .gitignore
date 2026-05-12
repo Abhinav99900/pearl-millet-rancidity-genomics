@@ -1,0 +1,38 @@
+# Raw sequencing and large genomics files
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.bam
+*.bai
+*.sam
+*.cram
+*.crai
+*.vcf
+*.vcf.gz
+*.vcf.gz.tbi
+*.bcf
+*.bcf.csi
+
+# Reference/database files
+*.fa
+*.fasta
+*.fna
+*.fa.gz
+*.fasta.gz
+*.fai
+*.dict
+*.dmnd
+*.bt2
+*.bwt
+*.pac
+*.ann
+*.amb
+*.sa
+
+# Logs/temp
+*.log
+*.tmp
+*.out
+*.err
+.DS_Store
