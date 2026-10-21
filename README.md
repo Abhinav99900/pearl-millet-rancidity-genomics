@@ -1,56 +1,52 @@
 # Pearl millet rancidity comparative genomics
 
-This repository contains processed summary tables, candidate-gene lists, plotting inputs, supplementary files, figures, and analysis scripts supporting the study:
+Processed tables, candidate-gene lists, figures, supplementary files and analysis scripts supporting the study:
 
-**Genome-wide comparative variant analysis reveals divergent candidate gene architectures associated with flour rancidity in pearl millet**
+**Comparative whole-genome resequencing identifies candidate genes for flour rancidity in pearl millet**
 
 ## Study overview
 
-This study compares two contrasting pearl millet varieties:
+The study compares two pearl millet varieties with contrasting flour rancidity:
 
-- **GHB-732 (LR):** low-rancid variety
-- **GHB-538 (HR):** high-rancid variety
+- **GHB-732 (LR):** low-rancidity variety
+- **GHB-538 (HR):** high-rancidity variety
 
-Both varieties were analysed using the same reference-guided SNP/INDEL discovery, variant-effect prediction, functional annotation, and rancidity-focused prioritization workflow.
+Both varieties were analysed with the same reference-guided SNP/INDEL discovery, variant-effect prediction,
+functional annotation and rancidity-focused prioritization workflow. The two candidate lists (585 and 1,108
+genes) were then merged into one set of 1,370 genes and compared allele by allele, with every putative
+difference checked in the sequencing reads of both varieties. The validated differences were used to select
+three priority candidates (SDP1, a monoacylglycerol lipase and a PER52-like class III peroxidase), for which
+variant-aware RT-qPCR primers were designed. Candidates are hypotheses for functional studies, not confirmed causal loci.
 
-The candidate genes reported in this repository should be treated as validation-ready candidates, not confirmed causal loci.
+## What is new in version 2 (manuscript revision)
+
+- `allele_level/`: allele-level comparison, read-level validation, gene classes, panel selection, primer design,
+  samtools cross-check, and the scripts and processed inputs to reproduce them (see `allele_level/README.md`).
+- `manuscript_v2/`: the six Additional files and eight figures of the current manuscript.
+
+The earlier list-level outputs (common/variety-unique "top candidate" selection, e.g. `candidate_lists/*TOP*`,
+`manuscript_data/top_candidates_Table6.tsv`, `scripts/select_top_candidates.py`) are kept for transparency but are
+superseded: the current validation panel is selected from allele-level, read-validated differences.
 
 ## Repository contents
 
-- `manuscript_data/`: summary tables used in the manuscript
-- `candidate_lists/`: final, common, and variety-unique candidate-gene lists
-- `figures/`: main manuscript figure files in PNG format
-- `figures_pdf/`: main manuscript figure files in PDF format
-- `supplementary/`: supplementary method, supplementary tables, and supplementary figures
+- `allele_level/`: allele-level comparison and validation (version 2)
+- `manuscript_v2/`: Additional files 1–6 and Figures 1–8 of the current manuscript (version 2)
+- `manuscript_data/`: summary tables (variant counts, overlaps, impact classes, flagstat)
+- `candidate_lists/`: final candidate lists of each variety and list-level comparisons
+- `figures/`, `figures_pdf/`: figure files of the earlier version
+- `supplementary/`: supplementary files of the earlier version
 - `heatmap_inputs/`: functional-category by impact-class matrix used for the heatmap
-- `scripts/`: analysis and reproducibility scripts
-- `docs/`: workflow notes, data dictionary, and candidate-selection documentation
+- `scripts/`: variant-level analysis and reproducibility scripts
+- `docs/`: workflow notes and data dictionary
 
 ## Raw sequencing data
 
-Large raw and intermediate files such as FASTQ, BAM, raw VCF, full SnpEff VCF, reference genomes, and annotation databases are not included in this GitHub repository.
-
-Raw sequencing reads have been submitted separately to IBDC/INDA and are scheduled for public release on 01-Jun-2027. Accession details will be added after public release or once they are available for citation.
-
-## Key reproducibility files
-
-- `manuscript_data/variant_counts_Table1.tsv`
-- `manuscript_data/variant_overlap_Table4.tsv`
-- `manuscript_data/impact_class_counts_Table3.tsv`
-- `manuscript_data/chromosome_distribution_Table5.tsv`
-- `manuscript_data/top_candidates_Table6.tsv`
-- `manuscript_data/flagstat_summary_SuppTableS5.tsv`
-- `candidate_lists/COMMON_ALL_SCORED_NO_ANNOTATION_SUPPORT.tsv`
-- `candidate_lists/GHB538_UNIQUE_ALL_SCORED_NO_ANNOTATION_SUPPORT.tsv`
-- `candidate_lists/GHB732_UNIQUE_ALL_SCORED_NO_ANNOTATION_SUPPORT.tsv`
-- `candidate_lists/TABLE6_READY_TOP_CANDIDATES_NO_ANNOTATION_SUPPORT.tsv`
-- `scripts/01_variant_record_level_overlap.sh`
-- `scripts/select_top_candidates.py`
+FASTQ, BAM, genome-wide VCF files, reference genomes and annotation databases are not included. Raw reads have
+been deposited in IBDC-INDA (accession INRP000666) and registered under INSDC Study/BioProject PRJEB113453;
+they will be publicly released on 1 June 2027 or upon publication, whichever is earlier.
 
 ## Citation
 
-If you use this repository, please cite the associated manuscript and the archived Zenodo release.
-
-Zenodo DOI: 10.5281/zenodo.20135136
-
-A newer version DOI will be added after the next Zenodo version is released.
+Please cite the associated manuscript and the archived Zenodo release (concept DOI: 10.5281/zenodo.20135136,
+which always resolves to the latest version).
