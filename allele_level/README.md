@@ -22,6 +22,7 @@ samtools ≥ 1.19 and the two final BAM files are needed only to re-run steps 02
 | 08 | `08_select_panel.py` | `uni/panel184.json`, gene classes, validated alleles | `uni/ranking2.json` |
 | 09–11 | primer scripts (09 mask, 10 Primer-BLAST screen, 10b PER52 local candidates, 11 PER52 uniqueness) | `uni/cds/`, `vcf/*.filt.vcf.gz`, Primer-BLAST output in `primers/` | masked CDS and specificity screens |
 | 12–15 | table and figure scripts | outputs above | `out/Additional_file_{3,5}.xlsx`, `figs/` |
+| 16 | `16_threshold_sensitivity.py` | annotated VCFs and all inputs above | `uni/threshold_sensitivity.tsv` (re-runs 03 and 06–08 with alternative paralog and depth thresholds) |
 
 Step 05 usage: `python3 05_bamcheck.py <bam> <bai> <sites> <out>`; run each site list against both
 varieties' BAM files (own variety → `self*.out`, other variety → `x*.out`).
@@ -31,6 +32,14 @@ varieties' BAM files (own variety → `self*.out`, other variety → `x*.out`).
 - Paralog-like cluster: ≥ 4 heterozygous coding calls (SnpEff HIGH/MODERATE/LOW) with allele fraction < 0.35 within 100 bp in one gene.
 - Read level: MAPQ ≥ 20; unmapped, secondary, QC-failed and duplicate reads excluded. Variety-specific when ≥ 15% of own informative reads are alternate-like, the other variety has ≥ 10 informative reads with < 5% alternate-like and < 25% non-reference reads, and neither BAM exceeds twice its median depth at the site.
 - Complex locus: any paralog-like cluster, or gene median coding-variant depth > 2× the variety median.
+
+## Threshold sensitivity
+The thresholds were set a priori. Step 16 repeats the classification and panel selection with one threshold changed at a time (paralog cluster ≥ 3 or ≥ 5 calls, allele fraction < 0.30 or < 0.40, 50- or 200-bp window; complex-locus depth > 1.5× or > 3× the median). MAGL was selected in 9/9 settings, SDP1 in 8/9 and the PER52-like peroxidase in 7/9. Alleles that become reliable only under an alternative setting have no read-level data and are counted as not validated.
+
+## Joint genotyping
+The same analysis was repeated on joint calls of both varieties (`../joint_genotyping/`). The numbers of validated
+variety-specific alleles were unchanged (418 and 257), SDP1 and MAGL were again selected, and the PER52-like
+peroxidase was replaced by Pgl_GLEAN_10011170 (PER66-like) because joint calling placed it in a paralog-like cluster.
 
 ## Check of the custom BAM reader
 `samtools_crosscheck/` compares read counts from `05_bamcheck.py` with `samtools mpileup` v1.19.2

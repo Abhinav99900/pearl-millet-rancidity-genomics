@@ -1,0 +1,19 @@
+Joint genotyping robustness check (GATK 4.6.2.0: HaplotypeCaller -ERC GVCF on both BAMs over the 1,370 gene
+models, CombineGVCFs + GenotypeGVCFs). Original hard filters (thesis Appendix Step 10; reproduce the published
+filtered gene-region VCFs exactly: 36,938/36,938 and 34,886/34,886 records). SnpEff 5.3 PearlMillet.
+Same reliability, paralog, read-level and complex-locus rules as the published analysis. Absence in the other
+variety is now taken from that sample's joint genotype (called, DP>=10) in both directions.
+
+                                   published (v19)     joint genotyping
+Validated alleles GHB-732 / GHB-538   418 / 257           418 / 257   (672/675 identical alleles)
+LR-specific / HR-specific / Both      142 / 83 / 41       141 / 83 / 37
+Complex loci                          283                 290
+Genes with identical class            -                   1,340 / 1,370 (97.8%)
+Eligible panel candidates             34                  34 (33 identical)
+TAG lipase                            SDP1 Pgl_GLEAN_10017888   SDP1 (same)
+MAG lipase                            MAGL Pgl_GLEAN_10036216   MAGL (same)
+Class III peroxidase                  PER52-like Pgl_GLEAN_10033116 -> becomes complex locus (paralog-like cluster)
+                                      PER66-like Pgl_GLEAN_10011170 selected instead
+
+Joint-call threshold sensitivity (9 settings): MAGL 9/9, SDP1 8/9, PER66-like 8/9 (Pgl_GLEAN_10004812 under K=3).
+Read-count consistency: 12 control sites re-counted gave identical counts to the published read check.
