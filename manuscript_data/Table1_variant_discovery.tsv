@@ -1,0 +1,7 @@
+Metric	GHB732_LR	GHB538_HR
+Raw_total_variants	18686050	17842802
+Hard_filtered_variants	15112744	13799108
+Retention_from_raw_percent	80.88	77.34
+Final_SNPs	13622513	12355115
+Final_INDELs	1490231	1443993
+Classified_impacted_gene_entries	35745	35772
