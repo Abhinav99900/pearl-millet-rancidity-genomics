@@ -1,0 +1,10 @@
+Metric	GHB732_LR	GHB538_HR
+Final_BAM	SO_14026_A1.dedup.bam	538.markdup.bam
+Total_reads	920049910	1057504039
+Mapped_reads	914350546	1003473750
+Mapping_rate_percent	99.38	94.89
+Properly_paired_reads	883485076	698769666
+Properly_paired_rate_percent	97.21	67.14
+Duplicate_reads	52783686	65602895
+Duplicate_rate_approx_percent	5.74	6.20
+Singletons	758178	526777
