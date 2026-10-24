@@ -1,8 +1,0 @@
-GHB-732 final candidates: 585
-GHB-538 final candidates: 1108
-Common candidates: 323
-GHB-732 unique candidates: 262
-GHB-538 unique candidates: 785
-Formula: Priority score = 2 x impact score + 2 x rancidity relevance score
-
-Diversity-aware selection was applied to reduce dominance of one impact class or functional group.
