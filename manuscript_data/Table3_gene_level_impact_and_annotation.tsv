@@ -1,0 +1,12 @@
+Gene_class_or_summary	GHB732_LR	GHB538_HR
+LoF_associated_genes	10181	13336
+Protein_altering_genes	16584	15792
+Noncoding_putative_regulatory_context_genes	5551	4300
+LOW_impact_coding_genes	3414	2343
+Intergenic_only_entries	14	0
+Compound_gene_ID_entries	1	1
+Overall_functional_annotation_percent	83.06	90.56
+Final_putative_rancidity_related_candidates	585	1108
+SwissProt_TrEMBL_homology_supported_final_candidates	557	1103
+EggNOG_supported_final_candidates	20	1
+Domain_rescue_final_candidates	8	4
