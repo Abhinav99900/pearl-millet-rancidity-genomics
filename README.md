@@ -20,6 +20,27 @@ used to select three priority candidates (SDP1, a monoacylglycerol lipase and a 
 for which variant-aware RT-qPCR primers were designed. Candidates are hypotheses for functional studies, not
 confirmed causal loci.
 
+## Workflow (start to end)
+
+The complete workflow, with all commands, is described in
+`manuscript_v2/additional_files/Additional_file_1.docx` (Supplementary Method S1):
+
+1. **Read QC and trimming:** FastQC, MultiQC and fastp
+2. **Alignment:** BWA-MEM2 to the Tift 23D2B1-P1-P5 reference; SAMtools sorting and indexing; Picard
+   MarkDuplicates; SAMtools flagstat (`manuscript_data/Additional_file_6_flagstat_summary.tsv`)
+3. **Variant calling and filtering:** GATK HaplotypeCaller (GVCF mode) and GenotypeGVCFs; separate SNP and
+   INDEL hard filters with bcftools (see *Variant filtering thresholds*)
+4. **Variant-effect prediction:** SnpEff, keeping the strongest predicted impact per variant and per gene
+5. **Functional annotation:** Swiss-Prot, TrEMBL, eggNOG, Pfam and CDD
+6. **Rancidity-focused prioritization:** 585 candidates in GHB-732 and 1,108 in GHB-538 (Additional file 4)
+7. **Allele-level comparison, read-level validation, gene classes, panel selection and primer design:**
+   scripts 01–16 in `allele_level/` (see `allele_level/README.md`)
+8. **Robustness checks:** threshold sensitivity (`allele_level/16_threshold_sensitivity.py`) and joint
+   genotyping (`joint_genotyping/`)
+
+Steps 1–6 were run on the genome-wide data, which are not included (see *Raw sequencing data*); steps 7–8 can
+be re-run from the files provided here.
+
 ## Repository contents
 
 | Folder | Contents | Manuscript |
